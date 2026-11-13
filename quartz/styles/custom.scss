@@ -1,0 +1,176 @@
+:root {
+  --research-border: var(--lightgray);
+  --research-text: var(--dark);
+  --research-serif: "Instrument Serif", Georgia, "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.research-nav {
+  align-items: center;
+  border-bottom: 1px solid var(--research-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem 2rem;
+  justify-content: space-between;
+  padding: 0 0 1rem;
+  width: 100%;
+}
+
+.research-wordmark {
+  color: var(--research-text);
+  font: 400 1.65rem/1 var(--research-serif);
+}
+
+.research-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.35rem;
+}
+
+.research-nav-links a {
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+.research-nav-links a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: .35em;
+}
+
+.article-title {
+  color: var(--research-text);
+  font-family: var(--research-serif);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+  margin-top: 1.5rem;
+}
+
+article {
+  line-height: 1.78;
+}
+
+article img {
+  height: auto;
+  max-width: 100%;
+}
+
+body[data-slug="index"] {
+  .page {
+    max-width: 1080px;
+    padding-inline: clamp(1.25rem, 6vw, 4rem);
+  }
+
+  .page > #quartz-body {
+    display: block;
+  }
+
+  .page > #quartz-body > .sidebar,
+  .page-header .popover-hint {
+    display: none;
+  }
+
+  .page > #quartz-body .page-header {
+    margin-top: 0;
+  }
+
+  .page-header header {
+    margin: 2.1rem 0 0;
+  }
+
+  article {
+    column-gap: clamp(2rem, 6vw, 5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    margin: 4.5rem 0 3.5rem;
+
+    > * {
+      grid-column: 1 / -1;
+    }
+
+    > h1:first-child {
+      align-self: end;
+      color: var(--research-text);
+      font: 400 clamp(4.3rem, 9vw, 7rem)/.94 var(--research-serif);
+      grid-column: 1;
+      grid-row: 1;
+      letter-spacing: -.035em;
+      margin: 0 0 .55rem;
+    }
+
+    > p:nth-of-type(1),
+    > p:nth-of-type(2) {
+      grid-column: 1;
+      margin: .8rem 0;
+      max-width: 23rem;
+    }
+
+    > p:nth-of-type(1) {
+      align-self: center;
+      grid-row: 2;
+    }
+
+    > p:nth-of-type(2) {
+      align-self: start;
+      grid-row: 3;
+    }
+
+    > p:has(img):nth-of-type(3) {
+      align-self: center;
+      grid-column: 2;
+      grid-row: 1 / span 3;
+      margin: 0;
+
+      img {
+        border: 1px solid var(--research-border);
+        border-radius: 0;
+        display: block;
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    > h2 {
+      border-top: 1px solid var(--research-border);
+      font-family: var(--research-serif);
+      font-size: 1.8rem;
+      margin: 3.6rem 0 1.1rem;
+      padding-top: 1.2rem;
+    }
+
+    > h3 {
+      font-family: var(--bodyFont);
+      font-size: 1.15rem;
+      margin: 0;
+    }
+
+    > h3 + p {
+      margin: .4rem 0 1.35rem;
+    }
+
+    a.internal {
+      background: transparent;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  body[data-slug="index"] article {
+    display: block;
+    margin-top: 2.9rem;
+
+    > p:has(img):nth-of-type(3) {
+      margin-top: 1.6rem;
+    }
+
+    > h2 {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .research-nav-links {
+    gap: .8rem;
+  }
+}
